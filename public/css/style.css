@@ -1,0 +1,49 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Quicksand', sans-serif;
+    background: #151515;
+    color: white;
+}
+
+#toasts {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.toast {
+    background: #777777;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    right: 0px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: right 0.4s;
+    position: relative;
+}
+.toast .error {
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    background: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_error_outline_white_24px.svg");
+}
+.toast .info {
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    background: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_info_outline_white_24px.svg");
+}
+.i {
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+    cursor: pointer;
+    display: inline-block;
+}

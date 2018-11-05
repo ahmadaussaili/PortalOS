@@ -1,0 +1,16 @@
+{
+    "name": "PortalOS",
+    "short_name": "PortalOS",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#151515",
+    "background_color": "#151515",
+    "description": "Desktop in the cloud.",
+    "icons": [
+        {
+            "src": "assets/images/favicon.png",
+            "sizes": "2480x2480",
+            "type": "image/png"
+        }
+    ]
+}

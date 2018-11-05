@@ -1,0 +1,368 @@
+.sidebar {
+    width: 25%;
+    background: #EEEEEE;
+    height: 100%;
+    display: inline-block;
+    box-shadow: inset -2px 0 6px rgba(0,0,0,0.1);
+    overflow: auto;
+}
+.sidebar div {
+    padding-left: 40px;
+    padding-top: 20px;
+    font-size: 12px;
+}
+.sidebar:first-child {
+    padding-top: 80px;
+}
+.favs {
+    padding: 0px;
+    padding-left: 12px;
+    cursor: pointer;
+}
+.closeButton {
+    position: absolute;
+    background-image:url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_close_black_24px.svg);
+    top: 15px;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+}
+.closeButton:hover {
+    cursor: pointer;
+}
+.folder-struct {
+    margin-bottom: 20px;
+}
+.folder-struct ul {
+    list-style-type: none;
+    background: url(/assets/images/vline.png) repeat-y;
+    margin: 0;
+    padding: 0
+}
+.folderBar {
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    margin-left: 0px;
+    padding: 0px;
+}
+.fileBar {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.subFileBar {
+    width: 100%;
+    height: 10px;
+}
+.subFolderBar {
+  position: relative;
+  width: 10px;
+  margin-left: 0px;
+  padding: 0px;
+}
+.folder-struct li {
+    margin: 0;
+    padding: 0 12px;
+    line-height: 20px;
+    background: url(/assets/images/node.png) no-repeat;
+    cursor: pointer;
+}
+.folder-struct li:last-of-type {
+    background: url(/assets/images/lastnode.png) no-repeat;
+    background-position-x: -1px;
+}
+
+.app-content {
+    width: 75%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    background-color: #F8F8F8;
+}
+
+.node-add {
+    background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_add_black_24px.svg");
+}
+.node-remove {
+    background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_remove_circle_outline_black_24px.svg")
+}
+.node-copy {
+    background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_content_copy_black_24px.svg");
+}
+.node-search {
+    background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_search_black_24px.svg");
+}
+.node-fav {
+    background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_favorite_border_black_24px.svg");
+}
+.faved {
+    background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_favorite_black_24px.svg") !important;
+}
+
+.search-bar, #folder-name, #new-name, .contents input, #new-event {
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+    width: 200px;
+}
+.search-bar {
+    margin-right: 25px;
+    top: -15px;
+    position: relative;
+}
+#folder-name, #new-name, .contents input {
+    margin: 20px;
+}
+
+.node-controls {
+    float: right;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+.node-path-cur {
+    font-weight: bold;
+    font-size: 20px;
+}
+.node-path-prev {
+    font-size: 12px;
+    cursor: pointer;
+}
+.node-path {
+    padding: 40px;
+}
+.nodes {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: calc(80% - 40px);
+    padding: 20px;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    flex-direction: row;
+}
+.node {
+    position: relative;
+    border-radius: 10px;
+    width: 150px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    transition: 0.2s;
+    margin: 19px;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    overflow: hidden;
+}
+.node.file {
+    background: white;
+    height: 150px;
+}
+.node.dir {
+    background: white;
+    height: 75px;
+    order: -1;
+}
+.node span {
+    position: relative;
+    left: 20px;
+    font-size: 14px;
+    max-width: 110px;
+    z-index: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    pointer-events: none;
+}
+.node.img span {
+    padding: 5px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+}
+.node img {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    z-index: 0;
+    pointer-events: none;
+    object-fit: cover;
+}
+.node:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transform: scale(1.01);
+}
+
+.dialog {
+    background-color: white;
+    height: 400px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+#file {
+    display: none;
+}
+#file-label {
+    padding: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.files {
+    overflow-y: auto;
+    height: auto;
+    max-height: 200px;
+    width: 200px;
+}
+#upload, #create, #rename, #cancel, #apply, #AddEvent {
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background: #2196F3;
+    border-radius: 2px;
+    padding: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.blur {
+    filter: blur(2px);
+}
+.menu {
+    position: fixed;
+    min-width: 150px;
+    z-index: 100;
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    color: black;
+    font-size: 14px;
+}
+.menu div {
+    padding: 10px;
+}
+.menu div:hover {
+    background: #81D4FA;
+}
+.children {
+    display: none;
+}
+.imgPreview {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #212121;
+}
+.modified {
+    background-color: #4DD0E1;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+    background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_save_white_24px.svg");
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    border-radius: 50%;
+    z-index: 100;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.move {
+    background: black;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    width: 200px;
+    border-radius: 5px;
+    height: 50px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.move div {
+    padding-right: 20px;
+}
+.move * {
+    margin: 10px;
+}
+.move img {
+  cursor: pointer;
+}
+.noPointer {
+  cursor: default;
+}
+.audio-controls {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+}
+.audio-pp {
+    background-color: #212121;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-image: url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_play_arrow_white_24px.svg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.audio-prog {
+    background: #616161;
+    height: 5px;
+    width: 100%;
+    transition: width 0.5s;
+}
+.audio-prog-out {
+    background: #BDBDBD;
+    height: 5px;
+    width: 80%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.audio-name {
+    position: absolute;
+    right: 30%;
+    font-size: 12px;
+    color: black;
+    text-align: right;
+    bottom: 55%;
+}
+.audio-canvas {
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    left: 30%;
+    bottom: 0;
+    pointer-events: none;
+}
+.pdf {
+    position: relative;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
